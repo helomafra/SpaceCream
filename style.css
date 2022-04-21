@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Palanquin:wght@400;600;700&family=Staatliches&display=swap');
+
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  /* fonts */
+  --ff-title: 'Staatliches', cursive;
+  --ff-texting: 'Palanquin', sans-serif;
+
+  font-size: 62.5%;
+
+  /* colors */
+  --bg-main: #EFF1FF; 
+  --bg-header: #8E9AAF;
+  --primary: #FEEAFA;
+  --secondary: #CBC0D3; 
+  --title-h2: #4A4E69;
+  --texting: #23053A;
+}
+
+body {
+  background-color: var(--bg-main);
+}
+
+
+header {
+  background-color: var(--bg-header);
+  text-align: center;
+  padding-top: 5rem;
+}
+
+header .img {
+  margin-bottom: 3.5rem;
+}
+
+header h1 {
+  text-transform: uppercase;
+  font-family: var(--ff-title);
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 2px;
+
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  background-color: var(--secondary);
+  padding: 0.8rem;
+  width: 100%;
+}
+
+header p {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.6rem;  
+}
+
+main p {
+  font-family: var(--ff-texting);
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: var(--texting);
+
+  text-align:  center;
+  padding: 3.6rem 3.6rem 0;
+
+  animation: topdown 700ms 350ms backwards;
+}
+
+main .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  padding: 5rem;
+}
+
+.card {
+  position: relative; 
+}
+
+.card img {
+  object-fit: cover;
+  border-radius: 20px;
+  max-width: 320px;
+  width: 100%;
+
+  animation: downtop 700ms 350ms backwards;
+}
+
+.card h2 {
+  position: absolute;
+  top: 2rem;
+  right: 1.6rem;
+
+  font-family: var(--ff-title);
+  font-size: 2rem;
+  letter-spacing: 1px;
+
+
+  background-color: var(--secondary);
+  border-radius: 20px;
+
+  padding: 8px 16px;
+
+  animation: topdown 700ms 350ms backwards;
+}
+
+main span {
+  display: none;
+}
+
+@media (min-width: 1300px) {
+  * {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+  }
+
+
+  header {
+    width: 40rem; 
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header p {
+    display: inline-block;
+    font-family: var(--ff-texting);
+    font-size: 2rem;
+    line-height: 2.6rem; 
+    color: white;
+
+    text-align:  center;
+    padding: 3.6rem 3.6rem 20rem;
+  }
+
+  header .img {
+    width: 21.4rem;
+    height: 17rem;
+  }
+
+  .page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+
+  main {
+    display: flex;
+    margin: auto;
+  }
+
+  main .cards {
+    display: grid;
+    grid-template-areas: 
+      'A C E'
+      'B C F'
+      'B D F';
+  }
+
+  main .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+  
+  main .cards .card:nth-child(2) {
+    grid-area: C;
+  }
+  
+  main .cards .card:nth-child(3) {
+    grid-area: E;
+  }
+  
+  main .cards .card:nth-child(4) {
+    grid-area: B;
+  }
+  
+  main .cards .card:nth-child(5) {
+    grid-area: D;
+  }
+  
+  main .cards .card:nth-child(6) {
+    grid-area: F;
+  }
+  
+  .cards .card span {
+    display: none;
+  }
+  
+  main p {
+    display: none;
+  }
+
+
+  main span, a {
+    display: inline;
+    font-family:'Open Sans';
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    color: #4A4E69;
+
+    text-align: center;
+    animation: downtop 700ms 350ms backwards;
+  }
+
+}
+
+
+@keyframes topdown {
+  /* propriedades inicais */
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  /* finalizando a transição */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+
+
+
+
+
+
